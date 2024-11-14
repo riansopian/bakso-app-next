@@ -1,4 +1,4 @@
-#Bakso App
+# Bakso App
 
 A real-time location tracking application built with Next.js, Leaflet, and Firebase Realtime Database. This application allows users to view each other’s locations in real-time, with dynamic markers indicating the roles (e.g., customers or vendors).
 
@@ -78,6 +78,6 @@ npm run dev
 
 4. Users can enable location sharing, which will be updated in Firebase, allowing others to see their real-time position.
 
-#License
+# License
 
 This project is licensed under the MIT License. See the LICENSE file for more information.
