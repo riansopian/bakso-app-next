@@ -217,9 +217,13 @@ const MapComponent = () => {
     try {
       const userRef = ref(realtimeDb, `users/${user.docId}`);
       await update(userRef, { status: 'inactive' });
-      let message = 'Kamu telah keluar dari pantauan Tukang Bakso';
+      let message;
       if (user.role === 'vendor') {
         message = 'Kamu telah menonaktifkan status Tukang Bakso';
+      } else if (user.role === 'customer') {
+        message = 'Kamu telah keluar dari pantauan Tukang Bakso';
+      } else {
+        message = 'Status kamu telah diperbarui.';
       }
       toast.info(message);
       setUser({
