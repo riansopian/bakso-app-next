@@ -1,4 +1,3 @@
-// pages/MapComponent.js
 'use client';
 import { LatLngTuple } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -178,9 +177,7 @@ const MapComponent = () => {
                 requestLocationAccess();
               }, 5000);
             } else {
-              toast.error(
-                'Gagal mendapatkan lokasi karena GPS tidak tersedia. Mohon coba lagi nanti.',
-              );
+              toast.error('Gagal mendapatkan lokasi. Mohon aktifkan GPS.');
             }
           }
         },
@@ -219,9 +216,9 @@ const MapComponent = () => {
       await update(userRef, { status: 'inactive' });
       let message;
       if (user.role === 'vendor') {
-        message = 'Kamu telah menonaktifkan status Tukang Bakso';
+        message = 'Sampai ketemu lagi Tukang Bakso';
       } else if (user.role === 'customer') {
-        message = 'Kamu telah keluar dari pantauan Tukang Bakso';
+        message = 'Kamu akan hilang dari pantauan Tukang Bakso';
       } else {
         message = 'Status kamu telah diperbarui.';
       }
